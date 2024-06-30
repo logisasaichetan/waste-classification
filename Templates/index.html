@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classifier</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: black;
+            color: #fff;
+            padding: 15px;
+        }
+
+        .left-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .right-nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 16px;
+        }
+
+        .card {
+            background-color: white;
+            color: black;
+            max-width: 1200px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            border: 2px solid black; 
+        }
+
+        .card-img {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCkPfkxQzjH017CdrMGYkTOdkC_d6TKIzAXQ&s');
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+        }
+
+        .card h1 {
+            color: red;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .image-placeholder {
+            margin-bottom: 20px;
+        }
+
+        .image-placeholder img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        button {
+            background-color: white;
+            color: red;
+            border-color: black;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .container-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+          
+            padding: 20px;
+            background-color: white;
+    
+            text-align: center;
+            border:none;
+            
+        }
+
+        .category {
+            width: 250px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 2px solid black; 
+        }
+
+        .category:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .category-info h2 {
+            margin-bottom: 10px;
+        }
+
+        .category-info p {
+            margin-bottom: 10px;
+        }
+
+        .middleheading {
+            text-align: center;
+            margin: 10px;
+        }
+
+        section {
+            background-color: white;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 1200px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            border: 2px solid black; 
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .mb-3 {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            font-size: 18px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 2px solid #ccc;
+        }
+
+        .mt-4 {
+            margin-top: 20px;
+        }
+
+        .lead {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+        }
+        .sectionbackground{
+        
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCkPfkxQzjH017CdrMGYkTOdkC_d6TKIzAXQ&s');
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+       
+    }
+
+    </style>
+</head>
+<body>
+<nav>
+    <div class="left-nav">
+        <a href="#">Ecoclassify</a>
+    </div>
+    <div class="right-nav">
+        <a href="#">Home</a>
+        <a href="#a">Codepage</a>
+    </div>
+</nav>
+<div class="card-img">
+    <div class="card">
+        <h1>Waste Classification</h1>
+        <p>Information</p>
+        <p>Learn about different categories of waste and how to classify them for proper disposal and management.</p>
+        <div class="image-placeholder">
+           
+                <img src="https://cdn1.byjus.com/wp-content/uploads/2017/10/Types-of-Waste-700x450.png" alt="image placeholder">
+               
+            </a>
+        </div>
+        <a href="https://www.sciencedirect.com/science/article/pii/S1319157820304547" target="_blank">
+            <button>Explore Now</button>
+        </a>
+        <div class="footer">
+            <p>This website provides information on waste classification to help users understand how to properly manage and dispose of different types of waste.</p>
+        </div>
+    </div>
+</div>
+<h1 class="middleheading">Proper Classification of Waste is Essential for Effective Waste Management</h1>
+<div class="container-wrapper">
+    <div class="container">
+        <div class="category">
+            <span class="icon">&#127758;</span>
+            <div class="category-info">
+                <h2>General Waste Disposal</h2>
+                <p>Dispose of your waste responsibly</p>
+                <button>Learn More</button>
+            </div>
+        </div>
+        <div class="category">
+            <span class="icon">&#9851;</span>
+            <div class="category-info">
+                <h2>Recycling Guidelines</h2>
+                <p>Contribute to a sustainable environment</p>
+                <button>Explore Recycling Options</button>
+            </div>
+        </div>
+        <div class="category">
+            <span class="icon">&#9888;</span>
+            <div class="category-info">
+                <h2>Hazardous Waste Management</h2>
+                <p>Handle hazardous waste with care</p>
+                <button>Browse Safety Measures</button>
+            </div>
+      </div>
+              <div class="category">
+            <span class="icon">&#127813;</span>
+            <div class="category-info">
+                <h2>Organic Waste Composting</h2>
+                <p>Transform organic waste into compost</p>
+                <button>Get Started</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sectionbackground">
+<section id="a">
+    <form action="/" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="imageUpload" class="form-label"><h1>Upload Image</h1></label>
+            <input class="form-control" type="file" id="imageUpload" name="image" accept="image/*" required>
+        </div>
+        <button type="submit" class="button">Upload Image</button>
+    </form>
+
+
+    {% if predicted_output %}
+    <div class="mt-4">
+        <h2>Prediction Result:</h2>
+        <p class="lead">The predicted class is: {{ predicted_output }}</p>
+        <img src="{{ url_for('processed_image', filename='processed_image.png') }}" alt="Processed Image" class="img-fluid">
+    </div>
+    {% endif %}
+</section>
+</div>
+</body>
+</html>
+
